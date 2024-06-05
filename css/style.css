@@ -1,0 +1,415 @@
+/* Geral */
+
+*{ /* Reset dos estilos */
+    margin: 0;
+    padding: 0;
+    font-family: helvetica;
+    box-sizing: border-box;
+}
+
+h1, 
+h2,
+h3{
+    color: #333;
+
+}
+
+p{
+    color: #70747a;
+}
+
+/* Navbar */
+
+.navbar-container{
+    width: 100%;
+    height: 80px;
+    background-color: #232a31;
+    padding: 0 2rem; /*Padding nas laterais. Sem padding em cima e em baixo*/
+}
+
+nav{
+    position: relative; /*Faz com que os elementos com position absolute dentro dela a tenham como referência*/
+}
+
+.logo{
+    width: 50px;
+    margin-top: 15px;
+}
+
+.navbar-items{
+    position: absolute; /* Como a nav tem position relative a classe navbar-items que tem position absolute a tera como referência*/
+    right: 0; /*Joga os itens para direita*/
+    height: 80px;
+    line-height: 80px;
+    margin: 0;
+    display: inline-block; /
+}
+
+.navbar-items li{ /*Estiliza as opções dentro do "ul" de class navbar-items*/
+    display: inline-block; /*Deixá-os em uma unica linha*/
+    text-transform: uppercase;
+    margin-left: 25px;
+}
+
+.navbar-items a{/* Edita o estilo do texto do link da li */
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.navbar-items a:hover{
+    color: #ccc;/*Cria o efeito de mudar a cor ao passar o botão por cima do texto do link*/
+
+}
+
+.default-btn{
+    padding: 15px 20px;
+    background-color: #2cc76a;
+    border-radius: 5px;
+}
+
+.navbar-items .default-btn:hover{
+    background-color: #22bb5f;
+    color: #fff;
+}
+
+/* main banner */
+
+.main-banner{
+    background-image: url("../img/saopaulo.jpg");
+    background-size: cover; 
+    background-position: center; /* background size cover e position center servem para ajustar a imagem ao centro do banner e apresentá-la completamente */
+    padding: 18rem 0;
+
+}
+
+.main-banner h1,
+.main-banner p{
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: #000 3px 2px 3px; /* os pixels da sombra se organizam nessa ordem: vertical - horizontal - espalhamento*/
+}
+
+.main-banner h1{
+    font-size: 54px;
+}
+
+.main-banner p{
+    font-size: 32px;
+}
+
+/* services */
+
+.services-container{
+    padding: 5rem 0; /* ganha espaçamento superior e inferior e lateral 0 */
+}
+
+.services-container ul{
+    display: flex; /*Deixa os itens um ddo lado do outro*/
+    width: 90%; /* Para centralizar */
+    margin: 0 auto; /*Preenche automaticamente os 5% que faltou da largura em cada lado*/
+}
+
+.services-container li{
+    flex: 1 1 200px; 
+    /*Em ordem: "1 forma que cresce quando a pagina aumenta" 
+    "1 forma que diminui quando a pagina aumenta"
+    "200 largura base" */
+    list-style: none; /*Tira o estilo da lista */
+    text-align: center;
+    padding: 20px;
+}
+
+.fas { /* Classe dos ícones*/
+    font-size: 60px; /* Aumenta os titulos pois estamos trabalhando com font-awesome que considera os ícones como texto*/
+    margin-bottom: 15px;
+}
+
+/* Muda a cor dos ícones individualmente */
+
+.fa-shield-alt{
+    color: #2cc76a;
+}
+
+.fa-rocket{
+    color: #ef3f29;
+} 
+
+.fa-comments{
+    color: #ef8f29;
+} 
+
+.services-container h3{
+    margin-bottom: 25px;/*Afasta o titulo do serviço do seu texto descritivo */
+}
+
+.services-container p{
+    line-height: 24px; /* Aumenta a distância entre linhas para facilitar leitura (do texto descritivo do serviço*/
+}
+
+/* prices and plans*/
+
+.pricing-container{
+    padding-bottom: 5rem; /*Para afastas da proxima seção */
+    text-align: center;
+}
+
+.pricing-container h2{
+    font-size: 36px;
+}
+
+.pricing-container p{
+    font-size: 20px;
+}
+
+.plans-container{
+    display: flex;/* Coloca os elementos um do lado do outro */
+    justify-content: space-between; /* Espaça todos os elemente igualmente dentro do espaço disponível*/
+    width: 90%;
+    margin: 50px auto 0; /* 50px em cima e automatico nas laterais para centralizar já que o elemento tem largura de 90%*/
+    text-align: center;
+}
+
+.plan{
+    flex: 1;/* Todos terão o tamanho igual dentro do flex */
+    max-width: 275px;
+    margin: 0 20px; /*Afasta apenas lateralmente os elementos uns entre os outros */
+}
+
+.plan ul{
+    padding: 0;
+}
+
+.plan li{
+   
+    list-style: none; /* Tira o círculo de marcação de cada item da lista*/
+    height: 50px;
+    line-height: 50px; /*Colocar o valor de line-height = valor do height é uma técnica de centralização na vertical */
+    background-color: #e8e9ea;
+    color: #333;
+}
+
+.plan .price{
+        width: 120px; 
+        height: 120px;
+        border-radius: 50%; /*Cria o aspecto arredondado dos preços de cada plano */
+        background-color: #2cc762;
+        color: #fff;
+        text-align: center;
+        line-height: 120px;
+        margin: 0 auto -50px; /* Faz com que o preço adentre o plano */
+        font-size: 18px;
+        position: relative; /* Faz com que ela se sobressaia sobre o plano*/
+}
+
+.plan .plan-name{
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #202b34;
+    padding: 50px 0; /*Espaçamento interior cima e baixo*/
+}
+
+.plan .plan-btn{ /*Edita preço e botão dos planos*/
+    background-color: #2cc762;
+    color: #fff;
+    font-size: 24px;
+    height: 75px;
+    line-height: 75px;
+    cursor: pointer;
+}
+
+.plan .recommended {
+    background-color: #f45c57; /*Diferencia o background do preço e do botão do plano recomendado*/
+}
+
+/* Search domain */
+
+.searchdomain-container{
+    background-color: #34454e;
+    text-align: center;
+    padding: 5rem 0; /*Espaçamento apenas em cima e embaxo*/
+}
+
+.searchdomain-container h2{
+    color: white;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.searchdomain-container p{
+    color: #d5d5d5;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.searchdomain-container input{
+    display: block; /*Deixa o input em uma unica linha*/
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto; /*Para centralizar*/
+}
+
+.searchdomain-container input[type="text"]{/*Para mexer especificamente em inputs de texto dentro do searchdomain-contianer*/
+    width: 60%;
+    padding: 20px;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.searchdomain-container input[type="submit"]{/* Edita apenas o botão de busca do domínio*/
+
+    background-color: #2cc76a;
+    padding: 15px 30px; /*Espaçamento interno muito utilizado em botões, menor em cima e em baixo e mais largo nas laterais*/
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: .8;
+}
+
+.searchdomain-container input[type="submit"]:hover{
+    opacity: 1;
+}
+
+/* contact form */
+
+.contact-container{
+    text-align: center;
+    padding: 5rem 0 2rem 0; /*cima - direita - baixo - esquerda*/
+}
+
+.contact-container h2{
+    font-size: 36px;
+    margin-bottom: 15px;
+}
+
+.contact-container p{
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.contact-container input,
+.contact-container textarea{
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    margin: 0 10px 20px;
+}
+
+.contact-container textarea{
+    display: block; /* Para ocupar apenas uma linha */
+    margin: 0 auto 20px; /*Centraliza*/
+    width: 470px;
+    height: 150px;
+}
+
+.contact-container input[type="submit"]{
+    display:block;
+    margin: 0 auto;
+    background-color: #2cc76a;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* footer */
+
+footer{
+    text-align: center;
+    font-weight: bold;
+    margin: 20px 0 100px;
+}
+
+/* RESPONSIVIDADE */
+
+/* small laptops a partir de 1100px */
+
+@media (max-width: 1100px){
+    .plans-container{
+        width: 95%; /* Libera mais espaço para seção */
+    }
+
+    .plan {
+        margin: 0 5px; /*Diminui a margin dos planos para diminuir a separação e ganhar espaço para o conteudo ser melhor exibido*/
+    }
+}
+
+/* tablet 900px*/
+
+@media (max-width:900px){
+    .main-banner p{
+        font-size: 32px;
+        padding: 0 6rem;
+    }
+
+    .searchdomain-container{
+        padding: 2rem 4rem;
+    }
+
+}
+
+/* celular 576px */
+
+@media (max-width: 576px){
+
+    html,body{
+        overflow-x: hidden; /* Tudo o que passa da tela é escondido, corrige o problema de apresentação da imagem  */
+    }
+
+    .navbar-items li{
+        font-size: 12px;
+        margin-left: 10px; /* Diminui os valores dos itens da barra de navegação para todos caiberem nela */
+    }
+
+    .main-banner p{
+        padding: 0 2rem;
+    }
+
+    .services-container ul{
+        display: block; /* Coloca os itens do service-container um abaíxo do outro */
+    }
+
+    .plans-container{
+        flex-direction: column; /* Para manter um plano por coluna (ficará um embaixo do outro) */
+        padding: 0 2rem;
+    }
+    .plan{
+        width: 100%;
+        max-width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .searchdomain-container h2{
+        font-size: 28px;
+    }
+
+    .contact-container{
+        padding: 3rem 2rem;
+    }
+
+    .contact-container input,
+    .contact-container textarea{
+        width: 100%;
+        margin: 10px 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
